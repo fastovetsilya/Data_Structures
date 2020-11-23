@@ -27,15 +27,39 @@ using namespace std;
 //     cout<<p[i]<<endl;
 // }
 
+// int main()
+// {
+//     int *p;
+//     p=new int[5];
+
+//     p[0]=10; p[1]=15; p[2]=14; p[3]=21; p[4]=31;
+
+//     for(int i=0;i<5;i++)
+//     cout<<p[i]<<endl;
+
+//     delete [ ] p; // for C++
+//     free(p); // for C
+// }
+
+struct Rectangle
+{
+    int length; 
+    int breadth;
+};
+
 int main()
 {
-    int *p;
-    p=new int[5];
+    int *p1;
+    char *p2; 
+    float *p3; 
+    double *p4; 
+    struct Rectangle *p5;
 
-    p[0]=10; p[1]=15; p[2]=14; p[3]=21; p[4]=31;
+    cout<<sizeof(p1)<<endl;
+    cout<<sizeof(p2)<<endl;
+    cout<<sizeof(p3)<<endl;
+    cout<<sizeof(p4)<<endl;
+    cout<<sizeof(p5)<<endl;
 
-    for(int i=0;i<5;i++)
-    cout<<p[i]<<endl;
-
-    delete [ ] p;
+    return 0; 
 }
