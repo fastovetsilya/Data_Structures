@@ -134,7 +134,7 @@ struct Node * RSearch(struct Node *p,int key)
     return RSearch(p->next,key);
 }
 
-int Insert(struct Node *p,int index,int x)
+void Insert(struct Node *p,int index,int x)
 {
     struct Node *t;
     int i;
@@ -156,20 +156,13 @@ int Insert(struct Node *p,int index,int x)
         t->next=p->next;
         p->next=t;
     }
-    
 }
 
 int main()
 {
-    struct Node *temp;
-    int A[]={3,5,7,10,15,8,12,20};
-    create(A,8);
-    temp=LSearch(first,15);
-    temp=LSearch(first,8);
-    if(temp)
-        printf("Key is Found %d\n",temp->data);
-    else
-        printf("Key not found\n");
+    int A[]={3,5,7};
+    create(A,3);
+    Insert(first,8,10);
     Display(first);
 
     return 0;
