@@ -158,12 +158,45 @@ void Insert(struct Node *p,int index,int x)
     }
 }
 
+void SortedInsert(struct Node *p,int x)
+{
+    struct Node *t,*q=NULL;
+
+    t=(struct Node*)malloc(sizeof(struct Node));
+    t->data=x;
+    t->next=NULL;
+
+    if(first==NULL)
+        first=t;
+    else
+    {
+        while(p && p->data<x)
+        {
+            q=p;
+            p=p->next;
+        }
+        if(p==first)
+        {
+            t->next;
+            first=t;
+        }
+        else
+        {
+            t->next=q->next;
+            q->next=t;
+        }
+    }
+}
+
 int main()
 {
-    int A[]={3,5,7};
-    create(A,3);
-    Insert(first,8,10);
+    int A[]={10,20,30,40,50};
+    create(A,5);
+    
+    SortedInsert(first,55);
+
     Display(first);
+    printf("\n\n");
 
     return 0;
 }
