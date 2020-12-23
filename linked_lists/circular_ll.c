@@ -96,13 +96,13 @@ void Insert(struct Node *p,int index,int x)
 int Delete(struct Node *p,int index)
 {
     struct Node *q;
-    int i,x; 
+    int i,x;
 
     if(index<0 || index>Length(Head))
         return -1;
     if(index==1)
     {
-        while(p->next!=Head)p=p->next; 
+        while(p->next!=Head)p=p->next;
         x=Head->data;
         if(Head==p)
         {
@@ -132,7 +132,7 @@ int main()
 {
     int A[]={2,3,4,5,6};
     create(A,5);
-    Delete(Head,3);
+    Delete(Head,1);
     RDisplay(Head);
 
     return 0;
